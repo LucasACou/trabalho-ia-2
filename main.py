@@ -3,7 +3,7 @@ import random as rand
 import copy
 
 padrao = [2,2,1,3,3,2,1,2,4]
-numero_individuo = 5000
+numero_individuo = 100
 aluno_real = []
 for _ in range(8):
     linha = [
@@ -39,11 +39,14 @@ while loop != 8:
     while len(nova_pop) < numero_individuo:
 
         #seleciona melhores cromossomos para serem pais
-        pai1 = gen.selecao(populacao)
-        pai2 = gen.selecao(populacao)
+        #pai1 = gen.selecao(populacao)
+        #pai2 = gen.selecao(populacao)
+        pai1 = gen.selecao_torneio(populacao)
+        pai2 = gen.selecao_torneio(populacao)
 
         while pai1 == pai2:
-            pai2 = gen.selecao(populacao)
+            #pai2 = gen.selecao(populacao)
+            pai2 = gen.selecao_torneio(populacao)
 
 #---------------------------------------------------------(CROSSOVER)
         filho1, filho2 = gen.crossover(pai1, pai2)
