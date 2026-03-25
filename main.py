@@ -3,7 +3,7 @@ import random as rand
 import copy
 
 padrao = [2,2,1,3,3,2,1,2,4]
-numero_individuo = 100
+numero_individuo = 5000
 aluno_real = []
 for _ in range(8):
     linha = [
